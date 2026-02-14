@@ -19,6 +19,18 @@ Stack orientado a LAN para Ubuntu 24.04 + NVIDIA RTX 5090.
 - NVIDIA drivers + `nvidia-container-runtime` funcional.
 - Modelos en `/mnt/modelos` (recomendado para evitar descargas recurrentes).
 
+## Preparación de carpetas y permisos (host)
+```bash
+cd deploy/opeclaw-lan-stack
+./scripts/bootstrap-storage.sh
+```
+
+Variables opcionales para personalizar:
+- `MODELS_DIR` (default `/mnt/modelos`)
+- `STACK_DATA_ROOT` (default `/var/lib/opeclaw-lan-stack`)
+- `STACK_USER` / `STACK_GROUP` (default usuario actual)
+- `MODELS_MODE` (default `775`) y `DIR_MODE` (default `750`)
+
 ## Arranque rápido
 ```bash
 cd deploy/opeclaw-lan-stack
